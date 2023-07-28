@@ -7,7 +7,8 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="{{ './assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
+            <!-- remove repo prefix when CNAME is added -->
+            href="{{ 'naomi-whitaker-photography/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
         />
 
         <title>{{ site.title }}</title>
