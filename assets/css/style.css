@@ -1,0 +1,93 @@
+/* Do some resets */
+
+body, main, figure, ul, li, ol, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Bon Vivant Serif";
+    src:
+        local("Bon Vivant Serif"),
+        url("../fonts/Bon\ Vivant/Bon\ Vivant\ Serif.otf") format("opentype");
+    font-style: normal;
+}
+@font-face {
+    font-family: "Bon Vivant Serif";
+    src:
+        local("Bon Vivant Serif Bold"),
+        url("../fonts/Bon\ Vivant/Bon\ Vivant\ Serif\ Bold.otf") format("opentype");
+    font-style: bold;
+}
+@font-face {
+    font-family: "Bon Vivant";
+    src:
+        local("BonVivant-Regular"),
+        url("../fonts/Bon\ Vivant/BonVivant-Regular.otf") format("opentype");
+    font-style: normal;
+}
+
+
+/* Common classes (mostly from Tailwind) */
+.bg-white { background-color: #fff }
+
+.inline-grid { display: inline-grid }
+.grid { display: grid }
+.flex { display: flex }
+.flex-1 { flex: 1 }
+
+.gap-2 { gap: 0.5em }
+.gap-6 { gap: 1.5em }
+
+.place-content-center { place-content: center }
+
+.max-w-max { max-width: max-content }
+
+.mx-auto { margin-left: auto; margin-right: auto }
+
+.font-bon-vivant { font-family: "Bon\ Vivant" }
+.font-bon-vivant-serif { font-family: "Bon\ Vivant\ Serif" }
+.font-bold { font-weight: bold }
+
+.text-decoration-none { text-decoration: none }
+.hover\:underline:hover { text-decoration: underline }
+.active\:underline:active { text-decoration: underline }
+.text-inherit { color: inherit }
+.text-center { text-align: center }
+.text-sm { font-size: 0.875em }
+.text-base { font-size: 1em }
+.text-xl { font-size: 1.25em }
+.text-3xl { font-size: 1.875em }
+
+.leading-3 { line-height: 0.75em }
+.leading-4 { line-height: 1em }
+
+/* Custom classes */
+
+.vertical-divider {
+    height: 1px;
+    background-color: #dfdeda;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+footer > .container {
+    margin: auto;
+    padding: 2em 2em 1em;
+    display: grid;
+    gap: 1.5em;
+}
+
+@media screen and (min-width: 640px) {
+    .vertical-divider {
+        height: unset;
+        width: 1px;
+    }
+
+    footer > .container {
+        padding: 3em 6em;
+        display: flex;
+    }
+}
