@@ -21,8 +21,22 @@
 title: Naomi Whitaker Photography
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-
+contact_email: naomifreeland18@gmail.com
+calendly_url: https://calendly.com/picturehisgloryphotography
 theme: null
+portfolios:
+  - title: Portfolio 1
+    slug: /portfolio/portfolio-1
+    bg_image: IMG_4101.jpg
+  - title: Portfolio 2
+    slug: /portfolio/portfolio-2
+    bg_image: IMG_4101.jpg
+  - title: Portfolio 3
+    slug: /portfolio/portfolio-3
+    bg_image: IMG_4101.jpg
+  - title: Portfolio 4
+    slug: /portfolio/portfolio-4
+    bg_image: IMG_4101.jpg
 
 # Exclude from processing.
 # The following items will not be processed, by default.

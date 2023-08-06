@@ -38,16 +38,28 @@ body, main, figure, ul, li, ol, p, h1, h2, h3, h4, h5, h6 {
 .grid { display: grid }
 .flex { display: flex }
 .flex-1 { flex: 1 }
+.block { display: block }
+
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+.auto-rows-max { grid-auto-rows: max-content }
 
 .gap-2 { gap: 0.5em }
+.gap-3 { gap: 0.75em }
 .gap-6 { gap: 1.5em }
+.gap-12 { gap: 3em }
 
 .place-content-center { place-content: center }
 
+.h-full { height: 100% }
+.w-full { width: 100% }
 .max-w-max { max-width: max-content }
 
-.mx-auto { margin-left: auto; margin-right: auto }
+.py-12 { padding-top: 3em; padding-bottom: 3em }
 
+.mx-auto { margin-left: auto; margin-right: auto }
+.mt-\[53px\] { margin-top: 53px }
+
+.font-actor { font-family: "Actor" }
 .font-bon-vivant { font-family: "Bon\ Vivant" }
 .font-bon-vivant-serif { font-family: "Bon\ Vivant\ Serif" }
 .font-bold { font-weight: bold }
@@ -61,11 +73,47 @@ body, main, figure, ul, li, ol, p, h1, h2, h3, h4, h5, h6 {
 .text-base { font-size: 1em }
 .text-xl { font-size: 1.25em }
 .text-3xl { font-size: 1.875em }
+.text-4xl { font-size: 2.25em }
 
 .leading-3 { line-height: 0.75em }
 .leading-4 { line-height: 1em }
+.leading-6 { line-height: 1.5em }
+
+.object-cover { object-fit: cover }
+.object-center { object-position: center }
+.aspect-square { aspect-ratio: 1 / 1 }
+
+.overflow-hidden { overflow: hidden }
 
 /* Custom classes */
+
+a.button {
+    @extend .font-bon-vivant-serif, .font-bold, .text-sm, .text-decoration-none, .text-inherit;
+    border-radius: 8px;
+}
+a.button.outlined {
+    padding: 7px 11px;
+    border: 1px solid #000;
+    background-color: transparent;
+    max-width: max-content;
+    transition: all 0.15s linear;
+}
+a.button.outlined:hover {
+    background-color: #000;
+    color: #fff;
+}
+a.button.filled {
+    padding: 7px 11px;
+    border: 1px solid #000;
+    background-color: #000;
+    max-width: max-content;
+    transition: all 0.15s linear;
+    color: #fff;
+}
+a.button.filled:hover {
+    background-color: transparent;
+    color: #000;
+}
 
 .vertical-divider {
     height: 1px;
@@ -74,6 +122,49 @@ body, main, figure, ul, li, ol, p, h1, h2, h3, h4, h5, h6 {
 
 .container {
     max-width: 1200px;
+    box-sizing: border-box;
+}
+
+.lets-talk-details > .container {
+    padding: 2em;
+}
+
+.lets-talk-details .actions {
+    display: grid;
+    gap: 1.5em;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-cell {
+    height: 370px;
+}
+.carousel-cell.portrait {
+    width: 245px;
+}
+.carousel-cell.landscape {
+    width: 550px;
+}
+
+.carousel-cell img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.instagram-reel-parallax {
+    background: url("https://images.unsplash.com/photo-1682417844065-07961597146e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3570&q=80"), rgba(255, 255, 255, 0.9);
+    background-blend-mode: overlay;
+}
+.instagram-reel-parallax > .container {
+    @extend .mx-auto, .grid;
+    padding: 1em 2em 3em;
+    gap: 3em;
 }
 
 footer > .container {
@@ -83,14 +174,95 @@ footer > .container {
     gap: 1.5em;
 }
 
+/* Portfolio Summary page */
+.portfolio > .container {
+    display: grid;
+    padding: 2em;
+}
+
+.portfolios-grid > div {
+    flex: 1;
+}
+
+/* About page */
+.about > .container {
+    display: grid;
+    padding: 2em;
+}
+
+.about-blurb {
+    order: 2;
+}
+
+.self-portrait {
+    width: 50vw;
+    @extend .mx-auto, .aspect-square, .overflow-hidden;
+    border-radius: 50%;
+    order: 1;
+}
+
+/* Contact page */
+.contact-blurb .container {
+    padding: 3em 2em;
+}
+
 @media screen and (min-width: 640px) {
     .vertical-divider {
         height: unset;
         width: 1px;
     }
 
+    .lets-talk-details > .container {
+        padding: 3em 8em;
+    }
+
+    .lets-talk-details .actions {
+        display: flex;
+        padding: 0.75em;
+    }
+
+    .instagram-reel-parallax > .container {
+        padding: 3em 8em;
+        display: flex;
+    }
+
     footer > .container {
         padding: 3em 6em;
         display: flex;
+    }
+
+    /* Portfolio Summary page */
+    .portfolio > .container {
+        padding: 3em 6em;
+    }
+    
+    .portfolios-grid {
+        flex-wrap: wrap;
+    }
+
+    .portfolios-grid > div {
+        flex: 1 1 33%;
+    }
+    
+    /* About page */
+    .about > .container {
+        padding: 3em 6em;
+        display: flex;
+    }
+
+    .about-blurb {
+        padding: 1.5em 3em;
+        order: 1;
+    }
+
+    .self-portrait {
+        width: 320px;
+        border-radius: 0;
+        order: 2;
+    }
+
+    /* Contact page */
+    .contact-blurb .container {
+        padding: 3em 6em;
     }
 }

@@ -1,18 +1,29 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: default
+permalink: /about
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<section class="about">
+    <div class="container gap-12 mx-auto">
+        <div class="about-blurb grid gap-6 text-center place-content-center grid-rows-max flex-1">
+            <p class="text-4xl font-bon-vivant">Hi, I&apos;m Naomi</p>
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+            <p class="font-actor text-base leading-6">
+                For more than a decade, I have captured hundreds of client&apos;s
+                most prized and precious moments that become life-long keepsakes,
+                passed from generation to generation. My career journey started in
+                {{ year }} in the heart of Fresno, California with an idea and a
+                camera, launching me to fulfill my passion in Amarillo, Texas.
+            </p>
+        </div>
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+        <figure class="self-portrait">
+            <img
+                class="object-cover object-center h-full w-full"
+                src="{{ '/assets/images/naomi-whitaker-self-portrait.jpeg' | relative_url }}"
+            />
+        </figure>
+    </div>
+</section>
 
-
-[jekyll-organization]: https://github.com/jekyll
+{% include lets-talk-details.html %}

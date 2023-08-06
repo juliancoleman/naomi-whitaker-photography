@@ -7,7 +7,20 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="{{ 'naomi-whitaker-photography/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
+            href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Actor&display=swap"
+            rel="stylesheet"
         />
 
         <title>{{ site.title }}</title>
@@ -16,7 +29,10 @@
     </head>
 
     <body>
-        <main>{{ content }}</main>
+        <main>
+            {{ content }}
+            {% include instagram-reel.html %}
+        </main>
         {% include footer.html %}
     </body>
 </html>
