@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Actor&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>{{ site.title }}</title>
+
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
+
+    <body>
+        <main>
+            <article
+                class="portfolio-details-hero"
+                style='--hero-bg: url("{{ page.showcase_image }}")'
+            >
+                <div class="container mx-auto flex gap-12">
+                    <div class="flex-1 grid gap-6 auto-rows-max place-content-center">
+                        <h1 class="text-4xl text-center font-bon-vivant-serif">{{ page.title }}</h1>
+                        <p class="text-center font-actor leading-6">{{ page.description }}</p>
+                    </div>
+
+                    <figure class="mx-auto">
+                        <img src="{{ page.showcase_image }}" class="object-cover w-full h-full" />
+                    </figure>
+                </div>
+            </article>
+            {{ content }}
+            {% include lets-talk-details-no-portfolio.html %}
+            {% include instagram-reel.html %}
+        </main>
+        {% include footer.html %}
+    </body>
+</html>
+
