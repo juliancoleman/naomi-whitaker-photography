@@ -23,11 +23,27 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 contact_email: naomifreeland18@gmail.com
 calendly_url: https://calendly.com/picturehisgloryphotography
+instagram: picture_his_glory
 theme: null
 portfolios:
-  - title: Sample Engagement Photoshoot
-    slug: /portfolio/sample
-    bg_image: IMG_4101.jpg
+  - title: Weddings
+    slug: /portfolio/wedding
+    bg_image: /weddings/showcase.jpg
+  - title: Seniors
+    slug: /portfolio/senior-photos
+    bg_image: /seniors/showcase.jpg
+  - title: Families
+    slug: /portfolio/families
+    bg_image: /families/showcase.jpg
+  - title: Branding
+    slug: /portfolio/branding
+    bg_image: /branding/showcase.jpg
+  - title: Maternity
+    slug: /portfolio/maternity
+    bg_image: /maternity/showcase.jpg
+  - title: Couples
+    slug: /portfolio/couples
+    bg_image: /couples/showcase.jpg
 
 # Exclude from processing.
 # The following items will not be processed, by default.

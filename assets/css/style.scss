@@ -38,10 +38,13 @@ body, main, figure, ul, li, ol, p, h1, h2, h3, h4, h5, h6 {
 .grid { display: grid }
 .flex { display: flex }
 .flex-1 { flex: 1 }
+.flex-shrink-1 { flex-shrink: 1 }
+.flex-shrink-0 { flex-shrink: 0 }
 .block { display: block }
 
 .relative { position: relative }
 .absolute { position: absolute }
+.left-0 { left: 0 }
 
 .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) }
 .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) }
@@ -94,6 +97,7 @@ body, main, figure, ul, li, ol, p, h1, h2, h3, h4, h5, h6 {
 .aspect-square { aspect-ratio: 1 / 1 }
 
 .overflow-hidden { overflow: hidden }
+
 
 /* Custom classes */
 
@@ -153,7 +157,7 @@ a.button.filled:hover {
 }
 
 .home-hero-parallax {
-    background: url("https://images.unsplash.com/photo-1682417844065-07961597146e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3570&q=80"), rgba(255, 255, 255, 0.9);
+    background: url("/assets/images/weddings/4.jpg"), rgba(255, 255, 255, 0.8);
     background-blend-mode: overlay;
 }
 
@@ -190,7 +194,7 @@ a.button.filled:hover {
 }
 
 .instagram-reel-parallax {
-    background: fixed no-repeat center/cover url("https://images.unsplash.com/photo-1682417844065-07961597146e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3570&q=80"), rgba(255, 255, 255, 0.9);
+    background: fixed no-repeat center/cover url("/assets/images/instagram-1.jpg"), rgba(255, 255, 255, 0.9);
     background-blend-mode: overlay;
 }
 .instagram-reel-parallax > .container {
@@ -264,6 +268,10 @@ footer > .container {
     padding: 3em 2em;
 }
 
+@media screen and (max-width: 640px) {
+    .mobile-hidden { display: none; }
+}
+
 @media screen and (min-width: 640px) {
     .vertical-divider {
         height: unset;
@@ -273,6 +281,18 @@ footer > .container {
     .home-hero > .container {
         padding: 6em 8em;
         justify-content: end;
+    }
+
+    .home-hero .home-images {
+        max-width: 65vw;
+    }
+    .home-hero .home-images > figure {
+        height: 420px;
+    }
+    .home-hero .home-images > figure:last-of-type {
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        overflow: hidden;
     }
 
     .lets-talk-details > .container {
